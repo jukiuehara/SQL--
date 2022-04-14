@@ -31,8 +31,7 @@ where amount < 5000;
 select * from sales
 where amount >= 5000; 
 
-select * from sales
-amount *1.1;
+select amount * 1.1 from sales ;
 
 select * from sales
 where amount IS NOT NULL;
@@ -49,4 +48,4 @@ set customer_id = '4'
 where sales_id = 4;
 
 delete from sales
-where amount = null;
+where amount is null;
