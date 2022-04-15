@@ -1,23 +1,23 @@
---1
+--2
 CREATE TABLE  customer(
  customer_id INT primary key
 , customer_name  VARCHAR(50)
 ); 
---2
+--3
 CREATE TABLE  sales(
  sales_id INT primary key
 , order_date date
 , customer_id INT NOT NULL REFERENCES customer(customer_id)
 , amount DECIMAL
 ); 
---3
+--4
 insert into customer
 (customer_id,customer_name)
 values(1,'�c��'),
 (2,'���'),
 (3,'�c��'),
 (4,'�c��');
---4
+--5
  INSERT INTO sales 
  (sales_id,order_date,customer_id,amount)
  VALUES(1, '2018/11/01',1,3000),
@@ -25,25 +25,24 @@ values(1,'�c��'),
 (3, '2018/10/01',4,6000),
 (4, '2018/11/02',2,2000),
 (5, '2018/11/15',2,NULL);
---5
-select * from sales
-where amount < 5000; 
 --6
 select * from sales
-where amount >= 5000; 
+where amount < 5000; 
 --7
-select amount * 1.1 from sales ;
+select * from sales
+where amount >= 5000; 
 --8
+select amount * 1.1 from sales ;
+--9
 select * from sales
 where amount IS NOT NULL;
---9
+--10
 select * from customer
 where customer_name <> '�c��';
---10
+--11
 update sales
 set order_date='2018/11/05'
 where sales_id = 4;
---11
 update sales
 set customer_id = '4'
 where sales_id = 4;
@@ -51,7 +50,7 @@ where sales_id = 4;
 delete from sales
 where amount is null;
 
---
+--ここから演習2の発展です。
 --1
 create table sales_old(
 sales_id int primary key,

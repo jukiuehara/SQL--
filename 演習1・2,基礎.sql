@@ -1,19 +1,13 @@
-
+--2
 CREATE TABLE  major(
  major_id INT primary key
 , major_name  VARCHAR(50)
 ); 
 
-INSERT INTO major 
-(major_id, major_name)
- VALUES (1, '�p���w');
- 
- INSERT INTO major 
-(major_id, major_name)
- VALUES (2, '���p���w');
+
  
  drop table student;
- 
+ --3
  CREATE TABLE  student(
  student_id INT primary key
 , student_name  VARCHAR(50)
@@ -22,14 +16,14 @@ INSERT INTO major
 ,major_id INT NOT NULL REFERENCES major(major_id)
 ); 
 
-INSERT INTO student 
-(student_id, student_name,grade,hometown,major_id)
- VALUES (1, '�R�c',1, '�{��',1);
- INSERT INTO student 
-(student_id, student_name,grade,hometown,major_id)
- VALUES (2, '�c��',2, '����',2);
-
-
+--4
+INSERT INTO major 
+(major_id, major_name)
+ VALUES (1, '�p���w');
+ 
+ INSERT INTO major 
+(major_id, major_name)
+ VALUES (2, '���p���w');
  INSERT INTO major 
 (major_id, major_name)
  VALUES (3, '���H�w');
@@ -39,7 +33,15 @@ INSERT INTO student
    INSERT INTO major 
 (major_id, major_name)
  VALUES (5, '���ە���');
- 
+
+--5
+ INSERT INTO student 
+(student_id, student_name,grade,hometown,major_id)
+ VALUES (1, '�R�c',1, '�{��',1);
+ INSERT INTO student 
+(student_id, student_name,grade,hometown,major_id)
+ VALUES (2, '�c��',2, '����',2);
+
  INSERT INTO student 
  (student_id, student_name,grade,hometown,major_id)
  VALUES (3, '����',1, '����',3),
@@ -52,7 +54,7 @@ INSERT INTO student
 (10, '�g��',4, '�_�ސ�',5)
  ;
 
-DROP TABLE student;
+DROP TABLE student;--５の値が間違っていたので作りなおしています。
   CREATE TABLE  student(
  student_id INT primary key
 , student_name  VARCHAR(50)
@@ -77,21 +79,23 @@ INSERT INTO student
 (9, '�X�{',4, '����',4),
 (10, '�g��',4, '�_�ސ�',5)
  ;
+
+ --6
   SELECT *  FROM student
 WHERE grade = 1;
-
-
+--7
+SELECT *  FROM student
 WHERE hometown = '����';
-
+--8
 select major_name from major;
-
+--9
 update student
 set grade='3'
 where student_id = 10;
-
+--10
 delete from student
 where student_id = 10;
-
+--ここから演習2の基礎です。
 --1
 select * from student
 where grade = 1
