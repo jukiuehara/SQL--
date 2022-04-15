@@ -1,5 +1,0 @@
-CREATE TABLE  major(
- ƒJƒ‰ƒ€–¼ VARCHAR(20)
-, Œ^  VARCHAR(20)
-, §–ñ VARCHAR(20)
-); 
